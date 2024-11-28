@@ -1,11 +1,16 @@
-// Smooth Scroll for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+// Add any interactive effects here if needed
+// For now, the bubbles have CSS hover effects, but you can add JavaScript interactions later.
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    const bubbles = document.querySelectorAll('.bubble');
+    
+    bubbles.forEach(bubble => {
+      bubble.addEventListener('mouseover', function() {
+        bubble.style.transform = 'scale(1.1)';
+      });
+      bubble.addEventListener('mouseout', function() {
+        bubble.style.transform = 'scale(1)';
+      });
     });
-});
+  });
+  
